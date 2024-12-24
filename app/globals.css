@@ -3,13 +3,13 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
+  --background: linear-gradient(135deg, #4facfe, #00f2fe, #00d4ff, #00c6ff);
   --foreground: #171717;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: linear-gradient(135deg, #c52323, #126e06, #0dff00, #08e9f5, #C52323FF);
     --foreground: #ededed;
   }
 }
@@ -17,5 +17,19 @@
 body {
   color: var(--foreground);
   background: var(--background);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
